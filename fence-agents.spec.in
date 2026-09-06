@@ -82,6 +82,7 @@ fence-agents-sanbox2 \\
 fence-agents-sbd \\
 fence-agents-scsi \\
 fence-agents-shelly \\
+fence-agents-tasmota \\
 fence-agents-vbox \\
 fence-virt \\
 fence-agents-vmware \\
@@ -1156,6 +1157,17 @@ Fence agent for Shelly Switches.
 %files shelly
 %{_sbindir}/fence_shelly_gen2
 %{_mandir}/man8/fence_shelly_gen2.8*
+
+%package tasmota
+License: GPL-2.0-or-later AND LGPL-2.0-or-later
+Summary: Fence agent for Tasmota and OpenBeken smart plugs
+Requires: fence-agents-common = %{version}-%{release}
+BuildArch: noarch
+%description tasmota
+Fence agent for smart plugs, relays, and power strips running Tasmota or OpenBeken, driven over the /cm HTTP API.
+%files tasmota
+%{_sbindir}/fence_tasmota
+%{_mandir}/man8/fence_tasmota.8*
 
 %package vbox
 License: GPL-2.0-or-later AND LGPL-2.0-or-later
