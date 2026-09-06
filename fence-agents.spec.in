@@ -49,6 +49,7 @@ fence-agents-eaton-ssh \\
 fence-agents-ecloud \\
 fence-agents-emerson \\
 fence-agents-eps \\
+fence-agents-esphome \\
 fence-agents-gce \\
 fence-agents-hds-cb \\
 fence-agents-hetzner-cloud \\
@@ -617,6 +618,17 @@ via the HTTP(s) protocol.
 %files eps
 %{_sbindir}/fence_eps*
 %{_mandir}/man8/fence_eps*.8*
+
+%package esphome
+License: GPL-2.0-or-later AND LGPL-2.0-or-later
+Summary: Fence agent for ESPHome relays
+Requires: fence-agents-common = %{version}-%{release}
+BuildArch: noarch
+%description esphome
+Fence agent for smart plugs and relays running ESPHome, driven over the web_server REST API.
+%files esphome
+%{_sbindir}/fence_esphome
+%{_mandir}/man8/fence_esphome.8*
 
 %package gce
 License: GPL-2.0-or-later AND LGPL-2.0-or-later
